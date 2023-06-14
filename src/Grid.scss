@@ -59,8 +59,8 @@ $grid-containers: (
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: ($grid-gutter / -4);
-  margin-left: ($grid-gutter / -4);
+  margin-right: calc($grid-gutter / -4);
+  margin-left: calc($grid-gutter / -4);
 
   &--reverse {
     flex-direction: row-reverse;
@@ -91,8 +91,8 @@ $grid-containers: (
     #{$col-selectors} {
       box-sizing: border-box;
       flex: 0 0 auto;
-      padding-right: ($grid-gutter / 4);
-      padding-left: ($grid-gutter / 4);
+      padding-right: calc($grid-gutter / 4);
+      padding-left: calc($grid-gutter / 4);
     }
 
     .grid__col {
@@ -103,14 +103,14 @@ $grid-containers: (
 
         @for $col from 1 through $grid-columns {
           &-#{$col} {
-            flex-basis: (100% / $grid-columns) * $col;
-            max-width: (100% / $grid-columns) * $col;
+            flex-basis: calc(100% / $grid-columns) * $col;
+            max-width: calc(100% / $grid-columns) * $col;
           }
         }
 
         @for $col from 1 through $grid-columns {
           &-offset-#{$col} {
-            margin-left: (100% / $grid-columns) * $col;
+            margin-left: calc(100% / $grid-columns) * $col;
           }
         }
       }
