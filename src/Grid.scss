@@ -1,3 +1,4 @@
+@use 'sass:math';
 // ////////////////////////////////////////////////////// //
 // BEM Sass port of Flexbox Grid - http://flexboxgrid.com //
 // ////////////////////////////////////////////////////// //
@@ -103,14 +104,14 @@ $grid-containers: (
 
         @for $col from 1 through $grid-columns {
           &-#{$col} {
-            flex-basis: calc(100% / $grid-columns) * $col;
-            max-width: calc(100% / $grid-columns) * $col;
+            flex-basis: math.div(100%, $grid-columns) * $col;
+            max-width: math.div(100%, $grid-columns) * $col;
           }
         }
 
         @for $col from 1 through $grid-columns {
           &-offset-#{$col} {
-            margin-left: calc(100% / $grid-columns) * $col;
+            margin-left: math.div(100%, $grid-columns) * $col;
           }
         }
       }
